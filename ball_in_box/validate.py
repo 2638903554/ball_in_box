@@ -42,6 +42,4 @@ def validate(circles, blockers):
             return False
     circles.append(c)
 
-
-    # all good
     return True
