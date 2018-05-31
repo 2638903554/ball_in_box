@@ -27,16 +27,21 @@ def validate(circles, blockers):
                     return False
 
     # Is circle good for each other?
-    for circle1 in circles:
-        for circle2 in circles:
-            x1 = circle1[0]
-            y1 = circle1[0]
-            r1 = circle1[0]
-            x2 = circle2[0]
-            y2 = circle2[0]
-            r2 = circle2[0]
-            if math.sqrt((x1 - x2)**2 + (y1 - y2)**2) < (r1 + r2):
-                return False
+
+    c=circles.pop()
+    x1 = c[0]
+    y1 = c[1]
+    r1 = c[2]
+
+    for circle in circles:
+        x2 = circle[0]
+        y2 = circle[1]
+        r2 = circle[2]
+        if math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) < (r1 + r2):
+            circles.append(c)
+            return False
+    circles.append(c)
+
 
     # all good
     return True
