@@ -68,7 +68,6 @@ def find_radius(blockers, m):
 
     return circles
 
-
 # 找出满足条件的最大圆的半径
 def min_radius(x, y, circles, blockers):
     if (1 - abs(x)) > (1 - abs(y)):
